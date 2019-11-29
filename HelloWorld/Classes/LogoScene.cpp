@@ -20,15 +20,19 @@ bool LogoScene::init()
 
 void LogoScene::update(float deltaTime)
 {
-	static int i = 0;
-	i++;
-	if (i == 50) {
-		i = 0;
+	static int j = 0;
+	j++;
+	if (j == 50) {
+		j = 0;
 		auto hello = HelloWorld::createScene();
-		Director::getInstance()->replaceScene(TransitionFade::create(1,hello,Color3B(255,255,255)));
-	}
-	else
-	{
-		std::cout << i << std::endl;
+		Director::getInstance()->replaceScene(TransitionPageTurn::create(0.9, hello, true));
+
+		//Director::getInstance()->replaceScene(TransitionJumpZoom::create(0.9, hello));
+
+		//Director::getInstance()->replaceScene(TransitionFade::create(0.9, hello,Color3B(255,255,255)));
+
+		//Director::getInstance()->replaceScene(TransitionFlipX::create(0.9, hello));
+
+		//Director::getInstance()->replaceScene(TransitionFlipY::create(0.9,hello));
 	}
 }

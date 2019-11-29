@@ -37,7 +37,6 @@ public:
     void menuCloseCallback(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
-	void update();
     CREATE_FUNC(HelloWorld);
 };
 

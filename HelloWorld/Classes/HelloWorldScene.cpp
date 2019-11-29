@@ -116,7 +116,6 @@ bool HelloWorld::init()
         // add the sprite as a child to this layer
         this->addChild(sprite, 0);
     }
-	scheduleUpdate();
     return true;
 }
 
@@ -132,15 +131,4 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
     //_eventDispatcher->dispatchEvent(&customEndEvent);
 
 
-}
-
-void HelloWorld::update()
-{
-	static int i = 0;
-	i++;
-	if (i == 20) {
-		i = 0;
-		auto logo = LogoScene::createScene();
-		Director::getInstance()->replaceScene(TransitionCrossFade::create(1, logo));
-	}
 }
