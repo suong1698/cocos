@@ -14,7 +14,18 @@ bool LogoScene::init()
 	{
 		return false;
 	}
-	scheduleUpdate();
+	auto ground = Sprite::create("./Sprites/Parallax/ground.png");
+	auto trees = Sprite::create("./Sprites/Parallax/tree.png");
+	auto background = Sprite::create("./Sprites/background.png");
+	auto curSizeBG = background->getContentSize();
+	auto winSize = Director::getInstance()->getWinSize();
+	background->setScale(winSize.width / curSizeBG.width, winSize.height / curSizeBG.height);
+	trees->setPosition(Vec2(0, 160));
+	background->setPosition(300, 300);
+	addChild(ground, 0);
+	addChild(trees, 0);
+	addChild(background, -1);
+	//scheduleUpdate();
 	return true;
 }
 
